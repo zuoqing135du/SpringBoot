@@ -1,0 +1,28 @@
+#用于选择配置文件，开发时通过active指向开发环境  dev
+#生产环境指向  prod
+
+spring:
+  profiles:
+    active: dev
+#以下配置,dev和prod都可以使用（公用配置写在application.yml文件里面）
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+#    create:每次都将表重新创建，表里面的数据会丢失
+      ddl-auto: update
+    show-sql: true
+
+
+  redis:
+      host: 192.168.1.109
+      pool:
+        max-idle: 100
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+
