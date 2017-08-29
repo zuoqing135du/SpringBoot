@@ -14,7 +14,7 @@
         </commentGenerator>
 
         <!-- 数据库的相关配置 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.182:3306/dimi_loan?characterEncoding=utf8" userId="root" password="123"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf8" userId="root" password="123456"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -27,7 +27,7 @@
         </javaModelGenerator>
 
         <!-- *Mapper.xml 文件的位置 -->
-        <sqlMapGenerator targetPackage="com.zuoqing.demo.mapper" targetProject="C:\IdeaProjects\src\main\java">
+        <sqlMapGenerator targetPackage="mapper" targetProject="C:\IdeaProjects\src\main\resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -37,8 +37,7 @@
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="sys_node"
-               domainObjectName="SysNode"
+        <table tableName="city" domainObjectName="City"
                enableCountByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"

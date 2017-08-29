@@ -19,10 +19,16 @@ spring:
 
 
   redis:
-      host: 192.168.1.109
+      host: localhost
       pool:
         max-idle: 100
         min-idle: 1
         max-active: 1000
         max-wait: -1
 
+  # mybatis配置
+  mybatis:
+    # 配置映射类所在包名
+    type-aliases-package: com.zuoqing.demo.entity
+    # 配置mapper xml文件所在路径，这里是一个数组
+    mapper-locations: classpath:mapper/*.xml

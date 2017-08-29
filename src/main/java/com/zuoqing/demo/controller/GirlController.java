@@ -1,6 +1,8 @@
 package com.zuoqing.demo.controller;
 
+import com.zuoqing.demo.dao.CityMapper;
 import com.zuoqing.demo.dao.GirlRepository;
+import com.zuoqing.demo.entity.City;
 import com.zuoqing.demo.entity.Girl;
 import com.zuoqing.demo.entity.Result;
 import com.zuoqing.demo.redis.RedisService;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +31,17 @@ public class GirlController {
     @Autowired
     protected GirlService girlService;
 
-    @GetMapping(value = "/girls")
-    public List<Girl> girlList() {
+    /*@Resource
+    private DemoGirlMapper demoGirlDao;*/
 
-        return girlService.girls();
+    @Resource
+    private CityMapper cityDao;
+
+    @GetMapping(value = "/girls")
+    public City girlList() {
+
+//        return demoGirlDao.selectByPrimaryKey(24);
+        return cityDao.selectByPrimaryKey(1);
     }
 
     /*
@@ -114,9 +124,6 @@ public class GirlController {
         list.add(girl);
         redisService.set("girlList",list);
 
-
-
-
         StringBuffer sb = new StringBuffer();
         redisService.set("str", "str");
         sb.append("str=").append(redisService.get("str").toString()).append(",");
@@ -129,6 +136,7 @@ public class GirlController {
         redisService.zAdd("zset", "val1", 1);
         redisService.zAdd("zset", "val2", 2);
         sb.append("zset=").append(redisService.rangeByScore("zset", 1, 2)).append(",");
+
         return sb.toString();
     }
 
