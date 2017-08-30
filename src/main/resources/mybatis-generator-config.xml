@@ -37,7 +37,7 @@
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="city" domainObjectName="City"
+        <table tableName="u_user_role" domainObjectName="UserRole"
                enableCountByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"

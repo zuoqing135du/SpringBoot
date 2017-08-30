@@ -41,6 +41,7 @@ public class GirlController {
     public City girlList() {
 
 //        return demoGirlDao.selectByPrimaryKey(24);
+        //mybatis的操作
         return cityDao.selectByPrimaryKey(1);
     }
 

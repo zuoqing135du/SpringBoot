@@ -17,8 +17,8 @@ public class LoginController {
     @Autowired
     private GirlProperties girlProperties;
 
-    @GetMapping(value = "login")
-    public String login(){
+    @GetMapping(value = "userlogin")
+    public String userlogin(){
         return LoginService.login("zuoqing","123");
     }
 
