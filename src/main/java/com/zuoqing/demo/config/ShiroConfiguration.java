@@ -1,4 +1,4 @@
-package com.zuoqing.config;
+package com.zuoqing.demo.config;
 
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -79,6 +79,11 @@ public class ShiroConfiguration {
         filterChainDefinitionManager.put("/login", "anon");//anon 可以理解为不拦截
         filterChainDefinitionManager.put("/ajaxLogin", "anon");//anon 可以理解为不拦截
         filterChainDefinitionManager.put("/statistic/**",  "anon");//静态资源不拦截
+        filterChainDefinitionManager.put("/testGet",  "anon");//不拦截
+        filterChainDefinitionManager.put("/testPost",  "anon");//不拦截
+        filterChainDefinitionManager.put("/file/excel",  "anon");//不拦截
+
+
         filterChainDefinitionManager.put("/**",  "authc,roles[user]");//其他资源全部拦截
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 

@@ -36,11 +36,29 @@ public class AdminController {
     @Autowired
     private URoleDao uRoleDao;
 
+    @RequestMapping(value = "/testGet", method = RequestMethod.GET)
+    public String testGet(String name , String pwd){
+
+        return "testGet"+name + pwd;
+
+    }
+
+    @RequestMapping(value = "/testPost", method = RequestMethod.POST)
+    public String testPost(String name , String pwd){
+
+        return "testPost:"+name + pwd;
+
+    }
+
+
+
+
   //跳转到登录表单页面
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
-        return "login";
+        return "login不拦截";
     }
+
     
     
     @RequestMapping("/")

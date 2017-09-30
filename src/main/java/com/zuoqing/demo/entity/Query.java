@@ -1,7 +1,7 @@
 package com.zuoqing.demo.entity;
 
 
-import com.zuoqing.config.Constant;
+import com.zuoqing.demo.config.Constant;
 
 /**
  * 翻页查询 参数		

@@ -1,4 +1,4 @@
-package com.zuoqing.config;
+package com.zuoqing.demo.config;
 
 /**
  * 开发框架基础架构的公共常量设置类（行知网络使用此基础框架的项目均可使用此常量类）

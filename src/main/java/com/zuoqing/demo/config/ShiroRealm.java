@@ -1,4 +1,4 @@
-package com.zuoqing.config;
+package com.zuoqing.demo.config;
 
 import com.zuoqing.demo.dao.UPermissionDao;
 import com.zuoqing.demo.dao.URoleDao;
