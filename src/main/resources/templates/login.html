@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--<link rel="alternate icon" type="image/png" href="/i/favicon.png">-->
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css"/>
+
+    <title>卡包管理后台系统</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+    </script>
+
+    <style>
+        .header {
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 200%;
+            color: #333;
+            margin-top: 30px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="header">
+    <div class="am-g">
+        <h1>卡包管理后台系统</h1>
+    </div>
+    <hr />
+</div>
+<div class="am-g">
+    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+        <div class="am-btn-group">
+        <a href="#" class="am-btn am-btn-secondary am-btn-sm">用户登录</a>
+        <!-- <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> Google+</a>
+         <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> stackOverflow</a>-->
+    </div>
+        <br/>
+        <form method="get" class="am-form" action="/login/pcLogin">
+            <label for="password">用户名:</label>
+            <input type="text" name="nickname" id="username" value="" />
+            <br/>
+            <label for="password">密码:</label>
+            <input type="password" name="pswd" id="password" value="" />
+            <br/>
+            <label for="remember-me">
+                <input id="remember-me" type="checkbox" />
+                记住密码
+            </label>
+            <br />
+            <div class="am-cf">
+                <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl" />
+                <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr" />
+            </div>
+        </form>
+        <p>© 2017 @左倾135度 397989141@qq.com</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+   /* $("#mybtn").click(function(){
+        var text = $("#text").val();
+        alert(text)
+    });*/
+
+</script>
+
+</body>
+</html>

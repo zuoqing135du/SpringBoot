@@ -74,22 +74,22 @@ public class ShiroConfiguration {
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap<String, String>();
         filterChainDefinitionManager.put("/logout", "logout");
         filterChainDefinitionManager.put("/user/**", "authc,roles[user]");
-        filterChainDefinitionManager.put("/shop/**", "authc,roles[shop]");
+        filterChainDefinitionManager.put("/admin/**", "authc,roles[admin]");
         filterChainDefinitionManager.put("/index/**", "authc,roles[admin]");
-        filterChainDefinitionManager.put("/login", "anon");//anon 可以理解为不拦截
-        filterChainDefinitionManager.put("/ajaxLogin", "anon");//anon 可以理解为不拦截
+
         filterChainDefinitionManager.put("/statistic/**",  "anon");//静态资源不拦截
-        filterChainDefinitionManager.put("/testGet",  "anon");//不拦截
+        filterChainDefinitionManager.put("/login/toLogin",  "anon");//不拦截
+        filterChainDefinitionManager.put("/login/pcLogin",  "anon");//不拦截
+        filterChainDefinitionManager.put("/pc/**",  "anon");//不拦截
         filterChainDefinitionManager.put("/testPost",  "anon");//不拦截
         filterChainDefinitionManager.put("/file/excel",  "anon");//不拦截
-
 
         filterChainDefinitionManager.put("/**",  "authc,roles[user]");//其他资源全部拦截
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/login/toLogin");
         shiroFilterFactoryBean.setSuccessUrl("/");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/403");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/login/toLogin");
 
         return shiroFilterFactoryBean;
     }
