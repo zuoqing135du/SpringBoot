@@ -77,14 +77,12 @@ public class ShiroConfiguration {
         filterChainDefinitionManager.put("/admin/**", "authc,roles[admin]");
         filterChainDefinitionManager.put("/index/**", "authc,roles[admin]");
 
-        filterChainDefinitionManager.put("/statistic/**",  "anon");//静态资源不拦截
-        filterChainDefinitionManager.put("/login/toLogin",  "anon");//不拦截
-        filterChainDefinitionManager.put("/login/pcLogin",  "anon");//不拦截
-        filterChainDefinitionManager.put("/pc/**",  "anon");//不拦截
-        filterChainDefinitionManager.put("/testPost",  "anon");//不拦截
-        filterChainDefinitionManager.put("/file/excel",  "anon");//不拦截
+        filterChainDefinitionManager.put("/templates/**",  "anon");//静态资源不拦截?
+
+        filterChainDefinitionManager.put("/login/**",  "anon");//不拦截
 
         filterChainDefinitionManager.put("/**",  "authc,roles[user]");//其他资源全部拦截
+//        filterChainDefinitionManager.put("/**",  "anon");//其他资源全部不拦截
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 
         shiroFilterFactoryBean.setLoginUrl("/login/toLogin");

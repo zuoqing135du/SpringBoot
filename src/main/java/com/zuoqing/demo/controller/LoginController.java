@@ -1,6 +1,7 @@
 package com.zuoqing.demo.controller;
 
 import com.zuoqing.demo.Properties.GirlProperties;
+import com.zuoqing.demo.entity.Girl;
 import com.zuoqing.demo.entity.UUser;
 import com.zuoqing.demo.serviceimpl.LoginServiceImpl;
 import org.apache.shiro.SecurityUtils;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/login")
@@ -24,6 +26,17 @@ public class LoginController {
 
     @Autowired
     private GirlProperties girlProperties;
+
+    //前端
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @ResponseBody
+    public Object login() {
+        Girl girl = new Girl();
+        girl.setAge(11);
+        girl.setCupSize("A");
+
+        return girl;
+    }
 
     //跳转到登录页面
     @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
