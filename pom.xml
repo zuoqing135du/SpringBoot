@@ -53,8 +53,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-
-
         <!--处理注解配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -72,7 +70,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <!--<version>5.7.6</version>-->
         </dependency>
 
         <!--jpa数据库操作-->

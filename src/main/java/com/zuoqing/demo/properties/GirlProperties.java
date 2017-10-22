@@ -1,4 +1,4 @@
-package com.zuoqing.demo.Properties;
+package com.zuoqing.demo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
