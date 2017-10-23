@@ -77,6 +77,8 @@ public class ShiroConfiguration {
         filterChainDefinitionManager.put("/admin/**", "authc,roles[admin]");
         filterChainDefinitionManager.put("/index/**", "authc,roles[admin]");
         filterChainDefinitionManager.put("/system/**", "authc,roles[admin]");
+        //swagger
+        filterChainDefinitionManager.put("/swagger-ui.html", "authc,roles[admin]");
 
         filterChainDefinitionManager.put("/templates/**",  "anon");//静态资源不拦截?
 

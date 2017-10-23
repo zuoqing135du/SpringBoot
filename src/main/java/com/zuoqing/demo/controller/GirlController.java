@@ -8,6 +8,8 @@ import com.zuoqing.demo.entity.Result;
 import com.zuoqing.demo.redis.RedisService;
 import com.zuoqing.demo.service.GirlService;
 import com.zuoqing.demo.utils.ResultUtil;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,13 +73,16 @@ public class GirlController {
         return ResultUtil.success(girlRepository.save(girl));
     }
 
+    //更新
+    @ApiOperation(value="修改用户", notes="根据id来修改特定值")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer")
     @GetMapping(value = "/girls/{id}")
     public Girl girlFindOne(@PathVariable("id") Integer id) {
         return girlRepository.findOne(id);
 
     }
 
-    //更新
+
     @PutMapping(value = "/girls/{id}")
     public Girl girlUpdate(@PathVariable("id") Integer id,
                            @RequestParam("cupSize") String cupSize,
