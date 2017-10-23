@@ -29,5 +29,4 @@ public class SystemController {
         return ResultUtil.success(list);
     }
 
-
 }

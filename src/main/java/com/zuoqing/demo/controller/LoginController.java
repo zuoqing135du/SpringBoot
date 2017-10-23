@@ -55,10 +55,9 @@ public class LoginController {
 
         /*//解决浏览器请求的跨域问题
         response.setHeader("Access-Control-Allow-Origin","*");*/
-
         List<Menu> menuList = systemService.getMenuList();
 
-        return systemService.getMenuList();
+        return ResultUtil.success(menuList);
     }
 
     //跳转到登录页面
@@ -100,7 +99,4 @@ public class LoginController {
         }
         return null;
     }
-
-
-
 }

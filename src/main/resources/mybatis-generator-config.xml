@@ -38,7 +38,7 @@
 
         <!-- 相关表的配置 -->
         <!--tableName="u_user%"-->
-        <table tableName="u_user_role" domainObjectName="UserRole"
+        <table tableName="menu" domainObjectName="Menu"
                enableCountByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
