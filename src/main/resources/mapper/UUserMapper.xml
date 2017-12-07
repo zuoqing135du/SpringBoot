@@ -203,7 +203,6 @@
 	<![CDATA[LIMIT #{rowIndex} , #{pageSize} ]]>
 </select>
 
-
 <!-- 直接使用表名查询HashMap列表 -->
 <select id="queryColumnList" parameterType="Query" resultType="java.util.HashMap">
 	select
@@ -212,9 +211,7 @@
 	<where>
 		<include refid="listCommonWhere" />
 	</where>
-
 </select>
-
 
 <!--根据主键获取数据-->
 <select id="findByName" resultMap="UUser">

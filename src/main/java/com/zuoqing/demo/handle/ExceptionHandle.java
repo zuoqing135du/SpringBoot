@@ -28,7 +28,7 @@ public class ExceptionHandle {
             return ResultUtil.error(girlException.getCode(), girlException.getMessage());
         }
         logger.error("【系统异常】 {}",e);
-        return ResultUtil.error(-1, "未知错误");
+        return ResultUtil.error(-1, e.toString());
     }
 }
 

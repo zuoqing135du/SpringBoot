@@ -8,7 +8,6 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
 import java.util.LinkedHashMap;
@@ -18,7 +17,7 @@ import java.util.Map;
  * shiro配置项
  * Created by Lucare.Feng on 2017/3/6.
  */
-@Configuration
+//@Configuration
 public class ShiroConfiguration {
 
     @Bean(name = "lifecycleBeanPostProcessor")
